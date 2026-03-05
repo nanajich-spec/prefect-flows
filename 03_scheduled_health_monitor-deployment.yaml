@@ -1,16 +1,16 @@
 ###
-### A complete description of a Prefect Deployment for flow 'Stress Test - Mass Scheduling'
+### A complete description of a Prefect Deployment for flow 'System Health Monitor'
 ###
-name: performance-benchmark
-description: Performance testing and benchmarking framework
-version: 95521d2fa5ff714ecbee2fca7a9dca97
+name: health-monitor
+description: System health monitoring with scheduled execution
+version: 4c5366567e5ed2a92aa1e43dc1deb9b0
 # The work queue that will handle this deployment's runs
 work_queue_name: default
 work_pool_name: null
 tags:
 - example
-- benchmark
-- performance
+- monitoring
+- scheduled
 parameters: {}
 schedule: null
 schedules: []
@@ -30,7 +30,7 @@ infrastructure:
 ###
 ### DO NOT EDIT BELOW THIS LINE
 ###
-flow_name: Stress Test - Mass Scheduling
+flow_name: System Health Monitor
 manifest_path: null
 storage:
   repository: https://github.com/nanajich-spec/prefect-flows.git
@@ -43,18 +43,13 @@ storage:
   block_type_slug: github
   _block_type_slug: github
 path: ''
-entrypoint: 05_fast_scheduling_benchmark.py:stress_test_flow
+entrypoint: 03_scheduled_health_monitor.py:system_health_monitor_flow
 parameter_openapi_schema:
   title: Parameters
   type: object
-  properties:
-    num_tasks:
-      default: 100
-      position: 0
-      title: num_tasks
-      type: integer
+  properties: {}
   required: null
   definitions: null
-timestamp: '2026-03-05T06:25:00.577123+00:00'
+timestamp: '2026-03-05T06:24:46.141512+00:00'
 triggers: []
 enforce_parameter_schema: null

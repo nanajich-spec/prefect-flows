@@ -1,17 +1,15 @@
 ###
 ### A complete description of a Prefect Deployment for flow 'Parallel Processing Pipeline'
 ###
-name: 02_parallel_processing_flow
-description: |-
-  Process multiple batches in parallel for optimal performance
-
-  Args:
-      num_batches: Number of batches to process in parallel
+name: parallel-processing
+description: Demonstrates parallel task execution for performance optimization
 version: b01cc48597c7730d90cbf784c292b33a
 # The work queue that will handle this deployment's runs
 work_queue_name: default
 work_pool_name: null
-tags: []
+tags:
+- example
+- parallel
 parameters: {}
 schedule: null
 schedules: []
@@ -33,8 +31,17 @@ infrastructure:
 ###
 flow_name: Parallel Processing Pipeline
 manifest_path: null
-storage: null
-path: /home/nanaji/prefect-flows
+storage:
+  repository: https://github.com/nanajich-spec/prefect-flows.git
+  reference: main
+  access_token: null
+  include_git_objects: true
+  _block_document_id: 86abf27e-b946-4271-8ded-85661ac7ddfe
+  _block_document_name: prefect-flows-github
+  _is_anonymous: false
+  block_type_slug: github
+  _block_type_slug: github
+path: ''
 entrypoint: 02_parallel_processing_flow.py:parallel_processing_flow
 parameter_openapi_schema:
   title: Parameters
@@ -48,6 +55,6 @@ parameter_openapi_schema:
       type: integer
   required: null
   definitions: null
-timestamp: '2026-03-05T04:02:33.234295+00:00'
+timestamp: '2026-03-05T06:24:39.072574+00:00'
 triggers: []
 enforce_parameter_schema: null
